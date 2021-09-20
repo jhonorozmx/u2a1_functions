@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>U2A1 Functions</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="form">
+        <div class="form-field">
+          <label for="InputText">Input Text</label>
+          <br />
+          <br />
+          <input
+            type="text"
+            id="InputText"
+            placeholder="Start typing some text"
+            required
+          />
+        </div>
+        <div class="form-field">
+          <button
+            class="primary-button"
+            id="ActionButton"
+            onclick="normalFunction()"
+          >
+            Action Button
+          </button>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <a href="https://www.freepik.com/vectors/background"
+        >Background vector created by freepik - www.freepik.com</a
+      >
+    </footer>
+    <script>
+      function normalFunction() {
+        let input = document.getElementById("InputText").value;
+        let count = 0;
+        let article = "";
+        const VOWELS = new RegExp(/[aeiou]/i);
+
+        if (input === "") {
+          window.alert("Please type something in the Input Text");
+        } else {
+          count = (function iife(inputString) {
+            return (inputString.match(/a/g) || []).length;
+          })(input);
+
+          const arrowFunc = (inputString) =>
+            VOWELS.test(inputString[0]) ? "an" : "a";
+
+          article = arrowFunc(input);
+          console.log(`${input}\n${count}\n${article}\n `);
+        }
+
+        document.getElementById("InputText").value = "";
+      }
+    </script>
+  </body>
+</html>
