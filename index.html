@@ -11,12 +11,12 @@
     <div class="container">
       <div class="form">
         <div class="form-field">
-          <label for="InputText">Input Text</label>
+          <label for="TextInput">Text Input</label>
           <br />
           <br />
           <input
             type="text"
-            id="InputText"
+            id="TextInput"
             placeholder="Start typing some text"
             required
           />
@@ -39,13 +39,13 @@
     </footer>
     <script>
       function normalFunction() {
-        let input = document.getElementById("InputText").value;
+        let input = document.getElementById("TextInput").value;
         let count = 0;
         let article = "";
         const VOWELS = new RegExp(/[aeiou]/i);
 
         if (input === "") {
-          window.alert("Please type something in the Input Text");
+          window.alert("Please type something in the Text Input");
         } else {
           count = (function iife(inputString) {
             return (inputString.match(/a/g) || []).length;
@@ -58,7 +58,7 @@
           console.log(`${input}\n${count}\n${article}\n `);
         }
 
-        document.getElementById("InputText").value = "";
+        document.getElementById("TextInput").value = "";
       }
     </script>
   </body>
